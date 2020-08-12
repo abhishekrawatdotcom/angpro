@@ -1,0 +1,50 @@
+<div style="align-items: center;">
+<h1>Registration Form</h1>
+<form #person='ngForm' novalidate>
+    id<input type='text' name='id' [(ngModel)]='p1.id' required minlength="4" #idctrl='ngModel'><br>
+    <span *ngIf="idctrl.touched&&idctrl.invalid">
+        <span *ngIf="idctrl.errors.required">
+            please provide value
+        </span>
+        <span *ngIf="idctrl.errors.minlength required">
+            please provide 4 chars
+
+        </span>
+        
+<br>
+    </span>
+    name<input type='text' name='name'[(ngModel)]='p1.name' minlength="4" #namectrl='ngModel'><br>
+    <span *ngIf="namectrl.touched&&namectrl.invalid">
+        <span *ngIf="namectrl.touched.required">
+            please provide value
+
+        </span>
+      
+
+    </span>
+
+    firstname<input type='text' name='fname'[(ngModel)]='p1.firstname' minlength="4" #fnamectrl='ngModel'><br>
+    <span *ngIf="fnamectrl.touched&&namectrl.invalid">
+        <span *ngIf="fnamectrl.touched.required">
+            please provide value
+
+        </span>
+      
+
+    </span>
+
+    lastname<input type='text' name='lname'[(ngModel)]='p1.lastname' minlength="4" #lnamectrl='ngModel'><br>
+    <span *ngIf="lnamectrl.touched&&namectrl.invalid">
+        <span *ngIf="lnamectrl.touched.required">
+            please provide value
+
+        </span>
+      
+
+    </span>
+
+    email<input type='text' name='email' [(ngModel)]="email" required email #emailctrl='ngModel'><br>
+    <button [disabled]='person.invalid'> save</button>
+
+
+</form></div>
